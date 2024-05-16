@@ -26,6 +26,12 @@ body {
   padding-bottom: 19px;
 }
 
+.center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;
@@ -37,7 +43,7 @@ body {
 /* Customize container */
 @media (min-width: 1280px) {
   .container {
-    max-width: 1200px;
+    max-width: 960px;
   }
 }
 .container-narrow > hr {
@@ -175,3 +181,24 @@ body {
     display:block;
  }
 }
+
+
+.container {
+    /* display: flex; 使用flexbox布局 */
+    flex-direction: column; /* 垂直方向布局 */
+    align-items: center; /* 水平居中对齐 */
+    /* text-align: center; 文字居中对齐 */
+}
+
+/* .img{
+    border: 1px solid white;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    /* line-height: 200px; */
+    text-align: center;
+    position:relative;
+} */
