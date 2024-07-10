@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>oviz使用手册 - 程晓强的个人主页</title>
+        <meta charset="utf-8" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://xiaoqiang-cheng.github.io/theme/static/css/style.css" rel="stylesheet" />
+	<link rel="shortcut icon" href="https://xiaoqiang-cheng.github.io/theme/images/icons/reddit.png" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class=""><a href="https://xiaoqiang-cheng.github.io">Home</a></li>
+                    <li><a href="https://xiaoqiang-cheng.github.io/pages/about.html">About</a></li>
+                    <li><a href="https://xiaoqiang-cheng.github.io/archives.html">Archives</a></li>
+                </ul>
+                <h2 class="text-muted"><a href="https://xiaoqiang-cheng.github.io">程晓强的个人主页</a></h3>
+				<h5 class="text-muted">A Cver, Code designer, Engineer, Farmer</h2>
+             </div>
+<section id="content" class="article content">
+  <header>
+    <h2 class="entry-title">
+      <a href="https://xiaoqiang-cheng.github.io/ovizshi-yong-shou-ce.html" rel="bookmark"
+         title="Permalink to oviz使用手册">oviz使用手册</a></h2>
+ 
+  </header>
+  
+     
+  <div class="entry-content">
+    <p><link rel="stylesheet" type="text/css" href="/theme/article.css"></p>
+<div align="center">
+
+  <div>&nbsp;</div>
+  <div align="center">
+    <b><font size="6">Xiaoqiang Studio</font></b>
+    <sup>
+      <a href="https://github.com/xiaoqiang-cheng">
+        <i><font size="4">SUB1</font></i>
+      </a>
+    </sup>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <b><font size="6">Oviz</font></b>
+    <sup>
+      <a href="https://github.com/xiaoqiang-cheng/Oviz">
+        <i><font size="4">TRY IT OUT</font></i>
+      </a>
+    </sup>
+  </div>
+  <div>&nbsp;</div>
+</div>
+
+<p><a href="https://github.com/xiaoqiang-cheng/Oviz/blob/main/README_en.md">English</a> | 简体中文</p>
+<p><img alt="" src="images/homepage.jpg"></p>
+<hr>
+<h2>介绍</h2>
+<p>一个正经的可视化工具，Xiaoqiang Studio三件套之一，Do Nothing, Show Anything。</p>
+<p>专为计算机视觉任务设计的轻量级 Python 可视化工具，Oviz 简化了复杂的可视化操作，让你专注于数据本身，从繁重的可视化轮子中解脱出来。无论是 3D 点云展示，2D 图像渲染，还是复杂的车体模型显示，Oviz 都能轻松应对。</p>
+<h3>特性</h3>
+<ul>
+<li><strong>跨平台兼容</strong>：支持 Linux、Windows 和 macOS 平台。</li>
+<li><strong>简易安装</strong>：提供 pypi 和源码两种安装方式。</li>
+<li><strong>快捷启动</strong>：简单的一行命令即可开启 Oviz。</li>
+<li><strong>多任务支持</strong>：支持点云、OCC、bbox 等 3D 元素和 2D 图像的可视化。</li>
+<li><strong>用户友好</strong>：快捷键操作，自动录屏，历史记录功能一应俱全。</li>
+<li><strong>二次开发</strong>：提供Oviz API和Magic Pipeline 两种方式快速扩展。</li>
+</ul>
+<h2>快速开始</h2>
+<h3>安装&amp;启动</h3>
+<p>oviz 支持在 Linux，Windows 和 macOS 上运行。它需要&gt;=python3.7环境，建议使用conda 来管理python环境，以下操作默认在符合上述要求的python环境下执行。您可以使用pypi 源安装或源码安装两种方式。</p>
+<p>(1) 安装</p>
+<ul>
+<li>pypi安装</li>
+</ul>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>oviz
+</code></pre></div>
+
+<ul>
+<li>源码安装</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/xiaoqiang-cheng/Oviz.git
+<span class="nb">cd</span><span class="w"> </span>Oviz/
+pip<span class="w"> </span>install<span class="w"> </span>-v<span class="w"> </span>-e<span class="w"> </span>.
+</code></pre></div>
+
+<p>(2) 启动</p>
+<div class="highlight"><pre><span></span><code>oviz
+</code></pre></div>
+
+<p>如果一切顺利，你将会看到如下启动界面，由于作者是中国人，在开发中大部分界面信息使用了中文，将尽快适配全英文版本。</p>
+<p><img alt="image-20240710183336361" src="images/startup.png"></p>
+<h3>窗体介绍</h3>
+<ul>
+<li>GlobalSetting</li>
+<li>全局设置窗，用于调整元素配色，设置录屏，显示车型等公共配置</li>
+<li>ElementSetting</li>
+<li>元素设置窗，用于选择离线数据，如点云、bbox等</li>
+<li>Progress</li>
+<li>用于切换上下帧</li>
+<li>Image</li>
+<li>图像显示窗，用于显示图像</li>
+</ul>
+<p>以上为oviz的主要组件，通过菜单栏-&gt;视图 或者 快捷键操作，可以自由显示或隐藏。</p>
+<h3>显示3D元素</h3>
+<ul>
+<li>
+<p>显示点云</p>
+</li>
+<li>
+<p>当前支持的点云文件格式有：.bin / .pcd /.txt</p>
+<ul>
+<li>bin格式为二进制的点云格式，请保证其可以通过np.fromfile api解析成N * X 维的array，并在</li>
+<li>pcd格式自带解析field，因此无需指定维度</li>
+<li>txt点云，请保证txt中各个维度以空格或者逗号间隔，每个点一行</li>
+</ul>
+</li>
+<li>首先，点击ElementSetting-&gt;template-&gt;pointcloud-&gt;[pointcloud] 按钮，选择要显示的点云文件夹</li>
+<li>据实填写 dim, xyz 维度,  wlh维度（可选，-1为不设置），color维度（将根据GlobalSetting中配色表显示颜色）</li>
+<li>
+<p>点云将显示在中间的3D显示区</p>
+</li>
+<li>
+<p>显示OCC</p>
+</li>
+<li>
+<p>OCC显示设置与点云完全一致，请按照点云支持的文件和配置操作</p>
+</li>
+<li>
+<p>OCC的wlh可以主动设置，如未配置，将 使用默认OCC格子大小(0.4m)</p>
+</li>
+<li>
+<p>可视化效果如下：</p>
+<p><img alt="" src="images/occ.jpg"></p>
+</li>
+<li>
+<p>显示bbox</p>
+</li>
+<li>
+<p>当前只支持txt格式的bbox3d结果文件用于可视化</p>
+</li>
+<li>首先，点击ElementSetting-&gt;template-&gt;bbox3d-&gt;[bbox3d] 按钮，选择要显示的bbox文件夹</li>
+<li>据实填写相关维度(xyzwlhθ)</li>
+<li>填写 旋转方向和相位差。<ul>
+<li>这一栏中需要填写两个数字，第一个为顺/逆时针方向，第二个为相位差。默认方向定义为x轴起，逆时针旋转（此时为 1.0, 0)</li>
+<li>例如，当前坐标系下bbox3d方向定义为y轴起，顺时针方向，则方向为顺,相位差为0.5pi,当前栏填写为[-1, 0.5]</li>
+</ul>
+</li>
+</ul>
+<h3>显示2D元素</h3>
+<ul>
+<li>显示图像</li>
+<li>如果图像窗体为隐藏状态，则应当首先显示图像窗体，即：菜单栏-&gt;视图-&gt;显示图片 或者通过快捷键(Ctrl+Shift+I)显示图像窗体</li>
+<li>通过双击图像窗体，选择要显示的离线图片文件夹，即可显示图像</li>
+<li>通过拖动图像标题栏可调整图像显示顺序和位置</li>
+<li>如果调整后多个图像窗体宽度未能保持一致，请按[r]即可自动对齐</li>
+</ul>
+<h3>显示车体</h3>
+<ul>
+<li>通过选中 [GlobalSetting-&gt;car_model_setting-&gt;显示车模型] 即可在3D视图中心显示仿真车</li>
+<li>如果当前车头方向与数据坐标系方向不一致，请通过重新选中调整车头方向，每次选中车头方向调整 0.5pi</li>
+</ul>
+<h3>重置</h3>
+<p>当遇到非预期bug导致oviz无法正常操作使用时，你可以通过以下操作来重置工具</p>
+<ol>
+<li>首先，保证 oviz 处于关闭状态</li>
+<li>使用以下方式来删除用户配置</li>
+</ol>
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-r<span class="w"> </span>~/.oviz
+</code></pre></div>
+
+<h2>进阶使用</h2>
+<h3>增加窗体</h3>
+<p>无论是3D组件还是2D组件，oviz都支持增加多组数据，你只要保证所有离线数据的文件名一致，即可方便用于对比可视化。例如 ECCV2024 <a href="https://arxiv.org/abs/2405.04299">ViewFormer</a> 的 occ flow可视化就是基于此功能渲染。</p>
+<p><img alt="" src="images/FlowOcc3D.jpg"></p>
+<ul>
+<li>图像窗体</li>
+<li>每个图像窗体的右上角都提供了 + 和 x两个按钮，可以方便的增删当前图像窗体。</li>
+<li>3D视图</li>
+<li>在ElementSetting 窗口中，通过点击"template"最右侧的 + 可以轻松增加一组并列的3D视图，通过相同的选择数据操作，即可实现可视化对比</li>
+<li>对于同一组内的可视化元素（例如点云，bbox），你也可以直接增加，例如点击pointcloud最右侧 "+"，即可在当前3D视图内，新增一组点云。需要注意的时，在当前模式下，数据颜色将不由color维度控制，而是以堆叠的元素顺序显示颜色。</li>
+</ul>
+<p>一个完整的多窗体示例如下图所示：
+<img alt="" src="images/demo.jpg"></p>
+<h3>历史记录</h3>
+<p>当你配置好本地的离线数据后，如果想将保存当前配置和数据路径，以防将来修改时恢复，可以通过快捷键（Ctrl+S）保存，当需要恢复时点击 菜单栏-&gt;历史记录 即可恢复。</p>
+<p><img alt="" src="images/history.jpg"></p>
+<h3>自动录屏</h3>
+<p>我们提供了两种录屏事件（切帧事件和鼠标事件），切帧事件会在你切换下一帧时保存下当前窗体渲染，鼠标事件则会在你操作鼠标（例如旋转3D视角）时，记录下窗体渲染。你只需要在 GlobalSetting-&gt;record_screen_setting 选中相应事件，然后播放数据即可。点击导出视频即可将刚才操作中记录下的所有图片导出为mp4。</p>
+<p>保存的每一帧图片和视频将保存在 [Save Dir]配置的目录下。</p>
+<p><img alt="" src="images/save.jpg"></p>
+<h3>快捷键</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>显示图片</td>
+<td><code>Ctrl+Shift+I</code></td>
+</tr>
+<tr>
+<td>显示3D窗口</td>
+<td><code>Ctrl+Shift+C</code></td>
+</tr>
+<tr>
+<td>显示日志</td>
+<td><code>Ctrl+Shift+L</code></td>
+</tr>
+<tr>
+<td>显示进度条</td>
+<td><code>Ctrl+Shift+P</code></td>
+</tr>
+<tr>
+<td>显示元素控制台</td>
+<td><code>Ctrl+Shift+E</code></td>
+</tr>
+<tr>
+<td>显示全局控制台</td>
+<td><code>Ctrl+Shift+G</code></td>
+</tr>
+<tr>
+<td>显示图片标题栏</td>
+<td><code>Ctrl+Shift+T</code></td>
+</tr>
+<tr>
+<td>显示状态栏</td>
+<td><code>Ctrl+Shift+S</code></td>
+</tr>
+<tr>
+<td>显示菜单栏</td>
+<td><code>Ctrl+Shift+B</code></td>
+</tr>
+<tr>
+<td>保存</td>
+<td><code>Ctrl+S</code></td>
+</tr>
+<tr>
+<td>自动播放</td>
+<td><code>Ctrl+P</code></td>
+</tr>
+<tr>
+<td>上一帧</td>
+<td><code>Ctrl+L</code></td>
+</tr>
+<tr>
+<td>下一帧</td>
+<td><code>Ctrl+N</code></td>
+</tr>
+</tbody>
+</table>
+<h2>扩展功能</h2>
+<p>我们提供了两种方式方便用户扩展。oviz的整理架构如下图所示：</p>
+<p><img alt="" src="images/framework.jpg"></p>
+<h3>Magic Pipeline</h3>
+<p>python的特性让我们可以实现很多像魔法一样的操作，因此，我把这个功能称为Magic Pipeline。具体来说，它是序列化数据到渲染界面之间的一个窗口。通过实现一个pipeline，我们可以实时修改或者打印一些信息，来帮助我们更快的debug。</p>
+<p>你可以通过GlobalSetting-&gt;magic_pipeline_setting 来使能它。通过点击[打开编辑器] 将通过vscode (你必须已经装过) 打开一个示例的pipeline代码。你可以通过仿写这个函数来控制数据是否执行当前流程。</p>
+<p>我尝试实现了一个装饰器来简化pipeline函数的设计，但是解释起来仍然很复杂。啊！所以，如果你会用到，请多自己尝试或者读代码吧。也可以与我联系，我可以远程和你交流这个功能。</p>
+<p>以下为示例pipline写法。</p>
+<div class="highlight"><pre><span></span><code><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">note:</span>
+<span class="sd">    1, if you need to add a new pipeline to repo, please add switch for it</span>
+<span class="sd">    2, do not push you temporary pipe to repo</span>
+<span class="sd">    3, add params instructions for your pipeline to easily apply</span>
+<span class="sd">    4, all pipeline will be executed in sequence, so switch is very very important</span>
+<span class="sd">    5, do not remember return data_dict</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">Oviz.MagicPipe.core</span> <span class="kn">import</span> <span class="n">magic_pipeline_iterate</span>
+
+<span class="k">def</span> <span class="nf">magic_debug</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">data_dict</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        print kargs when use magic pipeline</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;magic_debug&quot; : 1</span>
+<span class="sd">        }</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;magic_debug&quot;</span> <span class="ow">in</span> <span class="n">kargs</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="ow">and</span> <span class="p">(</span><span class="n">kargs</span><span class="p">[</span><span class="s1">&#39;magic_debug&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">kargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">data_dict</span>
+
+
+<span class="nd">@magic_pipeline_iterate</span><span class="p">(</span><span class="n">element_keys</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bbox3d&#39;</span><span class="p">],</span> <span class="n">switch_key</span><span class="o">=</span><span class="s2">&quot;fix_nus_bbox3d&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">fix_nus_bbox3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">ele</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">score_mask</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.3</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">score_mask</span><span class="p">]</span>
+
+    <span class="n">data</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">6</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.0</span>
+    <span class="k">return</span> <span class="n">data</span>
+</code></pre></div>
+
+<h3>Oviz API</h3>
+<p>我们提供了一套API，可以使得你像opencv一样在你的代码种调用oviz可视化，当然，这是一个开发中的功能，目前只支持仅有的几种元素，未来可能会做一些重构优化，但是我仍然相信，这是一个非常值得期待的功能。</p>
+<p>相比于本地可视化，远程服务器的可视化是更大的痛点。因此，我们基于TCP/IP 和 Share Memory 实现了两种中间件，用于远程和本地的api功能。</p>
+<p><img alt="" src="images/oviz_api.jpg"></p>
+<p>你可以用以下方式调用它：</p>
+<ul>
+<li>本地API</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">Oviz</span> <span class="kn">import</span> <span class="n">Oviz</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+  <span class="n">Oviz</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&quot;image/0/</span><span class="si">%s</span><span class="s2">.jpg&quot;</span><span class="o">%</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">6</span><span class="p">)))</span>
+  <span class="n">Oviz</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&quot;image/1/</span><span class="si">%s</span><span class="s2">.jpg&quot;</span><span class="o">%</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">6</span><span class="p">)))</span>
+
+  <span class="n">fake_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">720</span><span class="p">,</span> <span class="mi">720</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">10</span>
+
+  <span class="n">Oviz</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">fake_img</span><span class="p">)</span>
+  <span class="n">Oviz</span><span class="o">.</span><span class="n">pcshow</span><span class="p">(</span><span class="s2">&quot;points/bins/</span><span class="si">%s</span><span class="s2">.bin&quot;</span><span class="o">%</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">6</span><span class="p">)))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+  <span class="n">Oviz</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
+</code></pre></div>
+
+<ul>
+<li>远程API</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">Oviz</span> <span class="kn">import</span> <span class="n">Oviz</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">Oviz</span><span class="o">.</span><span class="n">init_oviz_api</span><span class="p">(</span><span class="s2">&quot;192.168.18.106&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">Oviz</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&quot;image/0/</span><span class="si">%s</span><span class="s2">.jpg&quot;</span><span class="o">%</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">6</span><span class="p">)))</span>
+    <span class="n">Oviz</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&quot;image/1/</span><span class="si">%s</span><span class="s2">.jpg&quot;</span><span class="o">%</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">6</span><span class="p">)))</span>
+
+    <span class="n">fake_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">720</span><span class="p">,</span> <span class="mi">720</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">10</span>
+
+    <span class="n">Oviz</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">fake_img</span><span class="p">)</span>
+    <span class="n">Oviz</span><span class="o">.</span><span class="n">pcshow</span><span class="p">(</span><span class="s2">&quot;points/bins/</span><span class="si">%s</span><span class="s2">.bin&quot;</span><span class="o">%</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">6</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">Oviz</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
+</code></pre></div>
+
+<p>经过我们的抽象，远程api相比本地只是多了局域网下的IP和端口初始化，其他完全一样。使用远程API时，你需要在oviz窗体 GloabalSetting-&gt;oviz_api_setting 打开该功能。</p>
+<h2>未来计划</h2>
+<ul>
+<li>[ ] 显示2D BBox</li>
+<li>[ ] 显示2D 分割</li>
+<li>[ ] 显示车道线</li>
+<li>[ ] 显示3D-&gt;2D投影</li>
+<li>[ ] 提高操作的便携性</li>
+<li>[ ] etc...</li>
+</ul>
+<p>如果你遇到问题或者需求，<a href="https://github.com/xiaoqiang-cheng/Oviz/issues">欢迎点击issue提问</a>，将尽快修复。也可以直接邮件给我  xiaoqiang.cheng@foxmail.com。</p>
+<p>当然，欢迎你主动修改或增加功能，提交代码与我共创。</p>
+<h2>Starchart</h2>
+<p><a href="https://star-history.com/#xiaoqiang-cheng/Oviz&amp;Date"><img alt="Star History Chart" src="https://api.star-history.com/svg?repos=xiaoqiang-cheng/Oviz&amp;type=Date"></a></p>
+  </div><!-- /.entry-content -->
+   <footer class="post-info text-muted">
+    Posted on <abbr class="published" title="2024-07-11T00:40:00+08:00">
+      周四 11 七月 2024
+    </abbr>
+    <address class="vcard author">
+      by <a class="url fn" href="https://xiaoqiang-cheng.github.io/author/xiaoqiangchengfoxmailcom.html">xiaoqiang.cheng@foxmail.com</a>
+    </address> in <a href="https://xiaoqiang-cheng.github.io/category/ji-zhu.html">技术</a> Tagged <a href="https://xiaoqiang-cheng.github.io/tag/ji-zhu.html">技术 </a><a href="https://xiaoqiang-cheng.github.io/tag/ke-shi-hua.html">可视化 </a>  </footer><!-- /.post-info -->
+</section>
+            <footer id="contentinfo" class="footer">
+                    <address id="about" class="vcard body">
+                    &copy; <a href="https://xiaoqiang-cheng.github.io">程晓强的个人主页</a> | <a href="https://github.com/xiaoqiang-cheng/">Github Pages</a> | <a href="https://www.zhihu.com/people/cheng-xiao-21-61">知乎</a> |
+                    <a href="mailto:xiaoqiang.cheng@foxmail.com">Email</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
+</html>
